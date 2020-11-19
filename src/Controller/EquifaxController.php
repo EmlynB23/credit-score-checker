@@ -18,6 +18,11 @@ class EquifaxController extends AbstractController
         $form = $this->createForm(EquifaxType::class);
         $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            return $this->render('thank-you.html.twig');
+        }
+
         return $this->render('equifax.html.twig', [
             'equifax_form' => $form->createView()
         ]);
