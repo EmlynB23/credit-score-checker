@@ -1,0 +1,79 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Check Your Credit Score | Equifax{% endblock %}
+
+{% block body %}
+    <section class="hero">
+        {% include "includes/banner-hero.html.twig" with {
+            'background_img' : 'https://www.paigeroosta.com/wp-content/uploads/2018/04/banner-young-couple-looking-home.jpg',
+            'title' : 'Take control of your finances',
+            'subtitle': 'Check your FREE* Equifax Credit Score today'
+        } %}
+    </section>
+
+    <section id="form" class="section">
+        {{ form_start(equifax_form, {'attr': {'id': 'form'}}) }}
+        <div class="container" style="width: 60%;">
+            <p class="mb-5"><b>Signup to our newsletter</b></p>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal has-text-left">
+                  <label class="label">Name**</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      {{ form_widget(equifax_form.name, { 'attr': { 'class': 'input', 'pattern': '^[A-Z][-a-zA-Z]+$' } }) }}
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal py-3">
+                <div class="field-label is-normal has-text-left">
+                  <label class="label">Email Address**</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      {{ form_widget(equifax_form.email, { 'attr': { 'class': 'input' } }) }}
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal has-text-left">
+                  <label class="label">Repeat Email Address**</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      {{ form_widget(equifax_form.confirmation_email, { 'attr': { 'class': 'input' } }) }}
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <br>
+            <p>**Required</p>
+            <div class="field is-horizontal">
+                <div class="field-label">
+                  <!-- Left empty for spacing -->
+                </div>
+                <div class="field-body has-text-right">
+                  <div class="field">
+                    <div class="control">
+                      {{ form_widget(equifax_form.signup, { 'attr': { 'class': 'button equifax-green is-rounded px-6' } }) }}
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        {{ form_end(equifax_form) }}
+    </section>
+    {% include "includes/footer.html.twig" %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/app.js') }}"></script>
+{% endblock %}

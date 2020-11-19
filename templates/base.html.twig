@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Take control of your finances, Check your FREE* Equifax Credit Score today">
+        <meta name="keywords" content="FREE, Equifax, Credit, Report, Score">
+
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- Bulma CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" integrity="sha512-ZRv40llEogRmoWgZwnsqke3HNzJ0kiI0+pcMgiz2bxO6Ew1DVBtWjVn0qjrXdT3+u+pSN36gLgmJiiQ3cQtyzA==" crossorigin="anonymous" />
+
+        <!-- Fontawesome CDN -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% include "includes/navbar.html.twig" %}
+
+        {% block body %}
+        {% endblock %}
+
+        <!-- JQuery script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
